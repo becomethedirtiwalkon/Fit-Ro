@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///D:/ARCHIVOS%20IMP/roci/RO%20FIT%20APP%20FINAL/src/components/PwaRegister.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect } from \"react\";\n\nexport default function PwaRegister() {\n  useEffect(() => {\n    if (typeof window === \"undefined\") return;\n    if (!(\"serviceWorker\" in navigator)) return;\n    const register = () => {\n      navigator.serviceWorker.register(\"/sw.js\").catch(() => undefined);\n    };\n    if (document.readyState === \"complete\") register();\n    else window.addEventListener(\"load\", register);\n    return () => window.removeEventListener(\"load\", register);\n  }, []);\n\n  return null;\n}\n"],"names":["PwaRegister","register"],"mappings":";;;;AAEA;AAFA;;AAIe,SAASA;IACtB,IAAA,kNAAS,EAAC;QACR,wCAAmC;;;QAEnC,MAAMC;IAMR,GAAG,EAAE;IAEL,OAAO;AACT"}}]
+}
